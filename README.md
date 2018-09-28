@@ -1,2 +1,2 @@
-# pj18-TarikOzcelik81
+# Tarik Ozcelik 
 Tarik Ozcelik created by GitHub Classroom
