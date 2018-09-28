@@ -1,3 +1,4 @@
+# KARTAL
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/MEF-BDA503/pj18-TarikOzcelik81/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
@@ -7,10 +8,6 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-1. ldjf
-2. çnfçfn
-
-_Italic_  aBAPdns
 
 ```markdown
 Syntax highlighted code block
