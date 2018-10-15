@@ -1,10 +1,8 @@
-# MEGADETH
-## Welcome to GitHub Pages
+## about me
+I am working as Agile Coach in İş Bank. My mission is to lead team understand Agile and implement disciplines of agile frameworks liek Scrum and Kanban
+My data interest begin when i try to calculate, present organization and team metrics for insights about continious improvement .   
+Near future i want to present metrics more professional way, and in future i want take part in AI project 
 
-You can use the [editor on GitHub](https://github.com/MEF-BDA503/pj18-TarikOzcelik81/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-##week1 homework 
+## Week1 assignment
 [click for homework1](https://mef-bda503.github.io/)
 
