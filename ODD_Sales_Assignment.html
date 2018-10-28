@@ -317,7 +317,8 @@ $(document).ready(function () {
 </div>
 <div id="section" class="section level3">
 <h3>28.11.2018</h3>
-<pre class="r"><code>library(dplyr)</code></pre>
+<pre class="r"><code>library(dplyr)
+library(scales)</code></pre>
 </div>
 </div>
 <div id="from-raw-to-civilized-data" class="section level2">
@@ -387,27 +388,29 @@ print(car_data_nov_16,width=Inf)</code></pre>
 </div>
 <div id="further-analysis-with-data" class="section level3">
 <h3>Further Analysis with Data</h3>
+<p>total sales and percentage by brand name</p>
 <pre class="r"><code>car_data_nov_16 %&gt;% 
   filter(auto_total &gt; 0 &amp; comm_total &gt; 0) %&gt;%
   select(brand_name,total_total) %&gt;%
-  arrange(desc(total_total))</code></pre>
-<pre><code>## # A tibble: 14 x 2
-##    brand_name    total_total
-##    &lt;chr&gt;               &lt;dbl&gt;
-##  1 VOLKSWAGEN          14359
-##  2 FIAT                13229
-##  3 RENAULT             12760
-##  4 FORD                12500
-##  5 TOYOTA               8323
-##  6 MERCEDES-BENZ        6933
-##  7 HYUNDAI              5829
-##  8 DACIA                5492
-##  9 NISSAN               4429
-## 10 PEUGEOT              4220
-## 11 CITROEN              3002
-## 12 KIA                  2789
-## 13 MITSUBISHI            463
-## 14 SSANGYONG              77</code></pre>
+  arrange(desc(total_total))  %&gt;%
+  mutate(percentage = percent(total_total/sum(total_total)))</code></pre>
+<pre><code>## # A tibble: 14 x 3
+##    brand_name    total_total percentage
+##    &lt;chr&gt;               &lt;dbl&gt; &lt;chr&gt;     
+##  1 VOLKSWAGEN          14359 15.2%     
+##  2 FIAT                13229 14.0%     
+##  3 RENAULT             12760 13.5%     
+##  4 FORD                12500 13.2%     
+##  5 TOYOTA               8323 8.8%      
+##  6 MERCEDES-BENZ        6933 7.3%      
+##  7 HYUNDAI              5829 6.2%      
+##  8 DACIA                5492 5.8%      
+##  9 NISSAN               4429 4.7%      
+## 10 PEUGEOT              4220 4.5%      
+## 11 CITROEN              3002 3.2%      
+## 12 KIA                  2789 3.0%      
+## 13 MITSUBISHI            463 0.5%      
+## 14 SSANGYONG              77 0.1%</code></pre>
 </div>
 </div>
 
