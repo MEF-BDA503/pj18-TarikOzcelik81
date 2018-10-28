@@ -2,6 +2,5 @@
 First Rmarkdown page Assignment [click here for assignment](https://mef-bda503.github.io/pj18-TarikOzcelik81/Assignment_week1.html)
 
 ## Week2  (Oct 31, 2018)
-in progress.. (note for instructor)
-
 ODD Car Sales Assignment [click here for assignment](https://mef-bda503.github.io/pj18-TarikOzcelik81/ODD_Sales_Assignment.html)
+note for instructor: Additional analysis in progress.
