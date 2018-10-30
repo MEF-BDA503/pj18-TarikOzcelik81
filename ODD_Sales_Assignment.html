@@ -412,13 +412,13 @@ print(car_data_nov_16,width=Inf)</code></pre>
 ## 12 KIA                  2789 3.0%      
 ## 13 MITSUBISHI            463 0.5%      
 ## 14 SSANGYONG              77 0.1%</code></pre>
-<p>maximum number of sales by</p>
+<p>maximum number of sales for auto domestic, auto import, commercial domestic, commercial import</p>
 <pre class="r"><code>car_data_nov_16 %&gt;% summarise(max_auto_dom=max(auto_dom),max_auto_imp=max(auto_imp),max_comm_dom=max(comm_dom),max_comm_imp=max(comm_imp) )</code></pre>
 <pre><code>## # A tibble: 1 x 4
 ##   max_auto_dom max_auto_imp max_comm_dom max_comm_imp
 ##          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
 ## 1         6905        10587         7187         3772</code></pre>
-<p>top 10 sales by car type and man. place</p>
+<p>top 10 sales by number and percentage for auto domestic, auto import, commercial domestic, commercial import</p>
 <pre class="r"><code>#first we find long format
 car_data_nov_16_long &lt;- car_data_nov_16 %&gt;%
   select(brand_name, auto_dom , auto_imp, comm_dom,comm_imp ) %&gt;%
