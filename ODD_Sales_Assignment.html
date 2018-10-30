@@ -318,6 +318,7 @@ $(document).ready(function () {
 <div id="section" class="section level3">
 <h3>28.11.2018</h3>
 <pre class="r"><code>library(dplyr)
+library(tidyverse)
 library(scales)</code></pre>
 </div>
 </div>
@@ -411,6 +412,35 @@ print(car_data_nov_16,width=Inf)</code></pre>
 ## 12 KIA                  2789 3.0%      
 ## 13 MITSUBISHI            463 0.5%      
 ## 14 SSANGYONG              77 0.1%</code></pre>
+<p>maximum number of sales by</p>
+<pre class="r"><code>car_data_nov_16 %&gt;% summarise(max_auto_dom=max(auto_dom),max_auto_imp=max(auto_imp),max_comm_dom=max(comm_dom),max_comm_imp=max(comm_imp) )</code></pre>
+<pre><code>## # A tibble: 1 x 4
+##   max_auto_dom max_auto_imp max_comm_dom max_comm_imp
+##          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1         6905        10587         7187         3772</code></pre>
+<p>top 10 sales by car type and man. place</p>
+<pre class="r"><code>#first we find long format
+car_data_nov_16_long &lt;- car_data_nov_16 %&gt;%
+  select(brand_name, auto_dom , auto_imp, comm_dom,comm_imp ) %&gt;%
+  gather(key=sales_sta,value=sales_num, -brand_name) 
+top_10_sales &lt;- car_data_nov_16_long %&gt;%
+  arrange(desc(sales_num))  %&gt;% 
+  mutate(percentage = percent(sales_num/sum(sales_num)))   %&gt;% 
+  slice(1:10)
+top_10_sales</code></pre>
+<pre><code>## # A tibble: 10 x 4
+##    brand_name    sales_sta sales_num percentage
+##    &lt;chr&gt;         &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;     
+##  1 VOLKSWAGEN    auto_imp      10587 8.66%     
+##  2 FORD          comm_dom       7187 5.88%     
+##  3 OPEL          auto_imp       7129 5.83%     
+##  4 RENAULT       auto_dom       6905 5.65%     
+##  5 FIAT          auto_dom       6638 5.43%     
+##  6 MERCEDES-BENZ auto_imp       5858 4.79%     
+##  7 TOYOTA        auto_dom       5762 4.71%     
+##  8 FIAT          comm_dom       5595 4.57%     
+##  9 DACIA         auto_imp       4745 3.88%     
+## 10 BMW           auto_imp       4611 3.77%</code></pre>
 </div>
 </div>
 
