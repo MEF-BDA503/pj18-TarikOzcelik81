@@ -412,12 +412,6 @@ print(car_data_nov_16,width=Inf)</code></pre>
 ## 12 KIA                  2789 3.0%      
 ## 13 MITSUBISHI            463 0.5%      
 ## 14 SSANGYONG              77 0.1%</code></pre>
-<p>maximum number of sales for auto domestic, auto import, commercial domestic, commercial import</p>
-<pre class="r"><code>car_data_nov_16 %&gt;% summarise(max_auto_dom=max(auto_dom),max_auto_imp=max(auto_imp),max_comm_dom=max(comm_dom),max_comm_imp=max(comm_imp) )</code></pre>
-<pre><code>## # A tibble: 1 x 4
-##   max_auto_dom max_auto_imp max_comm_dom max_comm_imp
-##          &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
-## 1         6905        10587         7187         3772</code></pre>
 <p>top 10 sales by number and percentage for auto domestic, auto import, commercial domestic, commercial import</p>
 <pre class="r"><code>#first we find long format
 car_data_nov_16_long &lt;- car_data_nov_16 %&gt;%
@@ -441,6 +435,20 @@ top_10_sales</code></pre>
 ##  8 FIAT          comm_dom       5595 4.57%     
 ##  9 DACIA         auto_imp       4745 3.88%     
 ## 10 BMW           auto_imp       4611 3.77%</code></pre>
+<p>top 5 sale numbers for each auto domestic, auto import, commercial domestic, commercial import</p>
+<pre class="r"><code>auto_imp_v &lt;- car_data_nov_16_long  %&gt;% filter(sales_sta==&quot;auto_imp&quot;)  %&gt;% arrange(desc(sales_num))  %&gt;% select(sales_num) %&gt;% slice(1:5) 
+auto_dom_v &lt;- car_data_nov_16_long  %&gt;% filter(sales_sta==&quot;auto_dom&quot;)  %&gt;% arrange(desc(sales_num))  %&gt;% select(sales_num) %&gt;% slice(1:5)
+comm_imp_v &lt;- car_data_nov_16_long  %&gt;% filter(sales_sta==&quot;comm_imp&quot;)  %&gt;% arrange(desc(sales_num))  %&gt;% select(sales_num) %&gt;% slice(1:5)
+comm_dom_v &lt;- car_data_nov_16_long  %&gt;% filter(sales_sta==&quot;comm_dom&quot;)  %&gt;% arrange(desc(sales_num))  %&gt;% select(sales_num) %&gt;% slice(1:5)
+data_f &lt;- data.frame(auto_dom_v,auto_imp_v,comm_dom_v,comm_imp_v)
+colnames(data_f) &lt;- c(&quot;top auto dom&quot;,&quot;top auto imp&quot;,&quot;top comm dom&quot;,&quot;top comm imp&quot;)
+data_f</code></pre>
+<pre><code>##   top auto dom top auto imp top comm dom top comm imp
+## 1         6905        10587         7187         3772
+## 2         6638         7129         5595         1929
+## 3         5762         5858          385         1075
+## 4         2665         4745          274          831
+## 5         2121         4611          182          747</code></pre>
 </div>
 </div>
 
