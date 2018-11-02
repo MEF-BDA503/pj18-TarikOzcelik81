@@ -317,22 +317,31 @@ $(document).ready(function () {
 <div id="from-r-consortium-videos" class="section level2">
 <h2>from R Consortium videos</h2>
 <p>Since we are learning both R and Python, and it is told that data engineer work with both languages the subject “Combining R and Python with GraalVM” seemed interesting for me.<br />
-GraalVM is a virtual machine for running applications written in JavScript, Python, Ruby, R, JVM based languages. GraalVM has two editions, Community eddition and Enterprice Edition. Community Edition is free and valable on github. GraalVm architecture in build on the Hotspot JVM. as a very simple start here is the syntax x &lt;- eval.polyglot(‘ruby’, ‘[1,2,3]’) print(x[[1]]) here is how to use R object in Python<br />
-<em>export R obect</em><br />
-export(‘robj’, c(1,2,3))<br />
-eval.polyglot(language=‘python’, path=‘python_ex.py’)<br />
-<em>here is python_ex.py</em><br />
-rvalue = polyglot.import_value(“robj”)<br />
-print(“Python:”, len(rvalue))<br />
+GraalVM is a virtual machine for running applications written in JavScript, Python, Ruby, R, JVM based languages. GraalVM has two editions, Community eddition and Enterprice Edition. Community Edition is free and valable on github. GraalVm architecture in build on the Hotspot JVM. as a very simple start here is the syntax <em>x &lt;- eval.polyglot(‘ruby’, ‘[1,2,3]’)</em> <em>print(x[[1]])</em> here is how to use R object in Python<br />
+export R obect <em>export(‘robj’, c(1,2,3))</em><br />
+<em>eval.polyglot(language=‘python’, path=‘python_ex.py’)</em><br />
+here is python_ex.py<br />
+<em>rvalue = polyglot.import_value(“robj”)</em><br />
+<em>print(“Python:”, len(rvalue))</em><br />
 here rvalue is R vector, not a Python object. Also most of python functionality works with this foreign object.</p>
 <p><a href="https://www.youtube.com/watch?v=ONNRWOTvtgw&amp;index=2&amp;list=PLhu0fDsj0wJR5ac5fuSgJXReqx2m2Msw7&amp;t=1s">for the video click</a></p>
 </div>
 <div id="r-posts-relevant-to-my-work" class="section level2">
 <h2>R posts relevant to my work</h2>
-<p>Actually as a team coach there is no R posts about agile. But as i told one of my operations is to calculate lead time (day cont between start and end date of work items) of product backlog items draw histograms from lead times, draw burndown charts (draw remaning work size, total backlog size, total done work size) so i decided to search for “how to draw historgram in R”, “how to find days difference in R”, “draw burndown chart in R”</p>
-<div id="draw-histogram-in-r" class="section level3">
-<h3>draw histogram in R</h3>
-<p>working on it……</p>
+<p>Actually as a team (agile) coach there is no R posts about agile. But as i told one of my operations is to determine team metrics and visualize them. so i decided to watch data visualization posts</p>
+<div id="dashboards-with-r-interactive-data-visualization-including-plots-data-tables-and-pivot-charts" class="section level3">
+<h3>Dashboards with R | Interactive Data Visualization including Plots, Data Tables and Pivot Charts</h3>
+<p>In the video dashboard is made by Rmarkdown but by choosing from template “flex dashboard”. when you choose this after title output is like below. you can choose &quot; theme (below this cerulan), orientation can be “rows” or “column” .when you choose “rows” dashboard elements will be side by side, to make new row is explained below. besides all these you can use all Rmardown knowledge. in your code you must inlclude library(flexdashboard).</p>
+<p>to to make a box in dashboard<br />
+<em>valueBox()</em></p>
+<p>to make new row<br />
+<em>row</em> <em>———————</em></p>
+<p><em>output:</em><br />
+<em>flexdashboard::flex_dashboard:</em><br />
+<em>theme:cerulan</em><br />
+<em>orientation: rows</em><br />
+<em>vertical_layout: fill</em></p>
+<p><a href="https://www.youtube.com/watch?v=_a4S4tq62OE&amp;t=924s">for the video click</a></p>
 </div>
 <div id="find-days-difference-in-r" class="section level3">
 <h3>find days difference in R</h3>
