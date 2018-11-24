@@ -369,7 +369,6 @@ sales_by_month %&gt;%
 </div>
 <div id="top-10-total-auto-sales" class="section level3">
 <h3>top 10 total auto sales</h3>
-<p>Below blabla</p>
 <pre class="r"><code>brand_total_top_sales &lt;-  total_sales %&gt;% 
                           group_by(brand_name) %&gt;%
                           summarise(brand_total_auto=sum(auto_total)) %&gt;%
